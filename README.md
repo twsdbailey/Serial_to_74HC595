@@ -40,7 +40,7 @@ https://www.rapidtables.com/convert/number/binary-to-decimal.html
 **Example:  X pattern LED flasher**
 
 ```
-Rows		        Array Index          Colum             Decimal equivalent	
+Rows		        Array Index          Column             Decimal equivalent	
 
 Row one: 		    (0)       10000000    00000001	    =     128,1,
 Row two  		    (1)       01000000    00000010	    =  	  64,2,
