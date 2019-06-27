@@ -1,5 +1,5 @@
 # Serial_to_74HC595
-Send bytes of data to a 74HC595 shift register from a computer via an Arduino to create patterned output. Can be used for POV LED applications, and other things.
+Send bytes of data to a 74HC595 shift register from a computer via an Arduino to create patterned outputs. Can be used for POV LED applications, and other things.
 
 This example code demonstrates how to send bytes of data to 74HC595 shift registers serially via an Arduino controller.   Each shift register represents one byte (or 8 bits) of data, and therefore provides eight controlled outputs. The 74HC595 shift registers can be daisy chained together to add additional outputs in groups of eight.  The maximum number of daisy-chained shift registers will depend on the applicated.
 
