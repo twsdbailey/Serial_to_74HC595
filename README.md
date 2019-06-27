@@ -6,7 +6,7 @@ This example code demonstrates how to send bytes of data to 74HC595 shift regist
 
 When a byte of character data is sent to the arduino from a computer,  it gets parsed and stored into a two-dimensional array representing rows and columns.  The number of columns is determined by the number of shift registers used.  The number of rows can be set to any height, depending on the amount of RAM available on the controller.  The example code as written uses two shift registers to make a row of 16 controllable outputs.  The example code as written also uses an array sized to 16 rows.   The amount of RAM needed to make an array of this size (16 X 16) is 256 bytes.  Arduino UNOs have 1KB of RAM.  If you need more RAM, consider using an Arduino Mega (8KB of RAM), or something similar.
 
-# Note: The Information below is specific to the included example code.
+**Note: The Information below is specific to the included example code.**
 
 Data sent to the arduino needs to be sent as ASCII characters.  Sending the characters 255 will turn-on all eight outputs on the first shift register.  Sending a second set of the characters 255 will turn-on all eight outputs on the second shift register.  Conversely, sending  a 0 character will turn-off all eight outputs on the first shift registers.  Sending a second 0 character will turn-off all eight outputs on the second shift register.
 
@@ -29,7 +29,7 @@ If a “s” character (do not include the quotes) followed be a carriage return
 If a “n” character (do not include the quotes) followed be a carriage return, the data will be cleared, and a new data set can be sent.
 
 
-# Designing patterns,
+** Designing patterns,**
 
 When creating a pattern, it might be helpful to divide each row of 16 columns into two halves.  Then decide which outputs will be turned-on and turned-off in each of the 16 rows.  Use 1s and 0s to represent the output states for the given rows. Then use an online  binary to decimal converter to  get the decimal value equivalents.
 
