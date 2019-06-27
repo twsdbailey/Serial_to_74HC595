@@ -1,4 +1,4 @@
-# Serial_to_74HC595
+# Serial to 74HC595 shift register
 Send bytes of data to a 74HC595 shift register from a computer via an Arduino to create patterned outputs. Can be used for POV LED applications, and other things.
 
 
