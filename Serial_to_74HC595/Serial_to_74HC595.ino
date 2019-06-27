@@ -100,7 +100,7 @@ void loop() {
       digitalWrite(latchPin, HIGH);
       delay (offTime); //off time
     }
-      digitalWrite(latchPin, LOW); //after output sequence is dent, turn off all outputs
+      digitalWrite(latchPin, LOW); //after output sequence is sent, turn off all outputs
       delay(onTime); //on time
       for (int z = 0; z < 2; z++) { //change to reflect the number of shift registers as needed
         shiftOut(dataPin, clockPin, MSBFIRST, clearline);
