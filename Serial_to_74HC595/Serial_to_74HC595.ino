@@ -60,7 +60,14 @@ void loop() {
       }
     }
     else if (c == 'l')looping = true; //listen for "loop" command
-    else if (c == 's')looping = false; //listen for "stop" command
+    else if (c == 's'){
+      looping = false; //listen for "stop" command
+       digitalWrite(latchPin, LOW);
+      for (int z = 0; z < 2; z++) { //change to reflect the number of shift registers as needed
+        shiftOut(dataPin, clockPin, MSBFIRST, clearline);
+      }
+      digitalWrite(latchPin, HIGH);
+    }
     else if (c == 'n') {  //clear registers for new data
       looping = false;
       digitalWrite(latchPin, LOW);
@@ -68,6 +75,8 @@ void loop() {
         shiftOut(dataPin, clockPin, MSBFIRST, clearline);
       }
       digitalWrite(latchPin, HIGH);
+      j=0; //reset arrays
+      i=0; //reset arrays
     }
     else {
       readString += c; //makes the string readString
@@ -84,12 +93,20 @@ void loop() {
       }
       digitalWrite(latchPin, HIGH);
       delay(onTime); //on time
+      digitalWrite(latchPin, LOW);
       for (int z = 0; z < 2; z++) { //change to reflect the number of shift registers as needed
         shiftOut(dataPin, clockPin, MSBFIRST, clearline);
       }
       digitalWrite(latchPin, HIGH);
       delay (offTime); //off time
     }
+      digitalWrite(latchPin, LOW); //after output sequence is dent, turn off all outputs
+      delay(onTime); //on time
+      for (int z = 0; z < 2; z++) { //change to reflect the number of shift registers as needed
+        shiftOut(dataPin, clockPin, MSBFIRST, clearline);
+      }
+      digitalWrite(latchPin, HIGH);
+      delay (offTime); //off time
     i = 0;
     data = 0;
   }
