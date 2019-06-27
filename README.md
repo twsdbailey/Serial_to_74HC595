@@ -20,7 +20,7 @@ Turn off all outputs:
         0,0,    then send using carriage return
 
 Turn on all outputs:
-        255,255.  then send using carriage return
+        255,255, then send using carriage return
 
 Since the array is sized 16 bits (2 bytes)  X 16 bits (2 bytes),  16 sets of x,x, will need to be sent before the outputs will be activated.  Once all the data is in, the outputs will create a pattern sequence one time.
 
