@@ -14,7 +14,7 @@ Data sent to the arduino needs to be sent as ASCII characters.  Sending the char
 
 When sending each two byte set, the characters need to be followed by a comma   x,x,
 
-Example;
+**Example:**
 
 Turn off all outputs:
         0,0,    then send using carriage return
@@ -37,7 +37,7 @@ When creating a pattern, it might be helpful to divide each row of 16 columns in
 
 https://www.rapidtables.com/convert/number/binary-to-decimal.html
 
-Example:  X pattern LED flasher
+**Example:  X pattern LED flasher**
 
 ```
 Rows		        Array Index          Colum             Decimal equivalent	
