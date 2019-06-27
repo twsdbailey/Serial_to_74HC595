@@ -10,9 +10,9 @@ When a byte of character data is sent to the arduino from a computer,  it gets p
 
 **Note: The Information below is specific to the included example code.**
 
-Data sent to the arduino needs to be sent as ASCII characters.  Sending the characters 255 will turn-on all eight outputs on the first shift register.  Sending a second set of the characters 255 will turn-on all eight outputs on the second shift register.  Conversely, sending  a 0 character will turn-off all eight outputs on the first shift registers.  Sending a second 0 character will turn-off all eight outputs on the second shift register.
+Data sent to the arduino needs to be sent as ASCII characters.  Sending the number characters 255 will turn-on all eight outputs on the first shift register.  Sending a second set of the number characters 255 will turn-on all eight outputs on the second shift register.  Conversely, sending  a 0 character will turn-off all eight outputs on the first shift registers.  Sending a second 0 character will turn-off all eight outputs on the second shift register.
 
-When sending each two byte set, the characters need to be followed by a comma   x,x,
+When sending each two byte set, the number characters need to be followed by a comma   x,x,
 
 **Example:**
 
