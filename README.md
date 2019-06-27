@@ -31,7 +31,7 @@ If a “s” character (do not include the quotes) followed be a carriage return
 If a “n” character (do not include the quotes) followed be a carriage return, the data will be cleared, and a new data set can be sent.
 
 
-**Designing patterns,**
+**Designing patterns**
 
 When creating a pattern, it might be helpful to divide each row of 16 columns into two halves.  Then decide which outputs will be turned-on and turned-off in each of the 16 rows.  Use 1s and 0s to represent the output states for the given rows. Then use an online  binary to decimal converter to  get the decimal value equivalents.
 
