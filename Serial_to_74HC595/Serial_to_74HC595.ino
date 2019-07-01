@@ -1,5 +1,5 @@
 //Serial to 74HC595 shift registers
-//D.Bailey 6/26/2019
+//D.Bailey 6/30/2019
 
 //Test this using Serial Monitor or another terminal program.
 //See README for more info on how to send the data.
@@ -45,9 +45,9 @@ void clearRow() { //this shifts 0s through the registers to turn all outputs off
 
 void renderRow() { //this reads the 2-dimensional array, and turns on the shift register outputs row by row
                     //number of rows set in the dataArray intializer
-  for (int y = 0; y < rows; y++) { //"y" is the number of rows to render
+  for (int y = 0; y < rows; y++) { //row incrementor
     digitalWrite(latchPin, LOW);
-    for (int x = 0; x < registers; x++) { //"x" is the number of registers, eight outputs each
+    for (int x = 0; x < registers; x++) { //shift register incrementor
       shiftOut(dataPin, clockPin, MSBFIRST, dataArray[y][x]);
     }
     digitalWrite(latchPin, HIGH);
@@ -61,14 +61,12 @@ void renderRow() { //this reads the 2-dimensional array, and turns on the shift 
   data = 0;
 }
 
-
 void setup() {
   pinMode(latchPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
   clearRow();//clear shift registers
   Serial.begin(9600);
-
 }
 
 void loop() {
@@ -120,5 +118,4 @@ void loop() {
     rendered = true;
   }
   if ((looping) && (rendered)) renderRow(); //looping is enabled only the rows have all been rendered once
-
 }
