@@ -33,7 +33,7 @@ If an “n” character (do not include the quotes) followed be a carriage retur
 
 **Designing patterns**
 
-When creating a pattern, it might be helpful to divide each row of 16 columns into two, to represent each of the shift registers.  Then decide which outputs will be turned-on and turned-off in each of the rows.  Use 1s and 0s to represent the output states for the given rows. Then use an online binary to decimal converter to get the decimal value equivalents.
+When creating a pattern, it might be helpful to divide each row of 16 columns into two, each representing one shift register.  Then decide which outputs will be turned-on and turned-off in each of the rows.  Use 1s and 0s to represent the output states for the given rows. Then use an online binary to decimal converter to get the decimal value equivalents.
 
 https://www.rapidtables.com/convert/number/binary-to-decimal.html
 
