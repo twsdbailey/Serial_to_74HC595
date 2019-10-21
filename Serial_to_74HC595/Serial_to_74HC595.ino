@@ -1,12 +1,12 @@
 //Serial to 74HC595 shift registers
-//D.Bailey 6/30/2019
+//D.Bailey 10/21/2019
 
 //Test this using Serial Monitor or another terminal program.
 //See README for more info on how to send the data.
 
-
 //*********configuration*******************
-int dataArray[16][2]; //first initializer = total rows to render, second initializer = total number of shift registers
+int dataArray[16][2]; //first initializer = total rows to render (multiply the number of shift registers being used x 8),
+//second initializer = total number of shift registers
 int rows = 16; //should match first intitalizer in dataArray
 int registers = 2; //should match 2nd intitializer in dataArray, each register has 8 outputs
 
@@ -15,12 +15,12 @@ int onTime = 75;  //"on" time of the outputs
 int offTime = 25; //"off" time of the outputs
 
 //define Arduino pinouts to connect to the shift registers
-#define latchPin 8
-#define clockPin 12
+#define latchPin 10
 #define dataPin 11
+#define clockPin 12
 
 bool debug = true; //set this true to echo input data for troubleshooting back to Serial Monitor or other
-                  //terminal program
+//terminal program
 
 
 //********no changes needed below this point*******
@@ -33,18 +33,16 @@ bool looping = false;
 bool rendered = false;
 String readString;
 
-
 void clearRow() { //this shifts 0s through the registers to turn all outputs off
   digitalWrite(latchPin, LOW);
-  for (int z = 0; z < 2; z++) { //change to reflect the number of shift registers as needed
+  for (int z = 0; z < registers; z++) {
     shiftOut(dataPin, clockPin, MSBFIRST, 0);
   }
   digitalWrite(latchPin, HIGH);
 }
 
-
 void renderRow() { //this reads the 2-dimensional array, and turns on the shift register outputs row by row
-                    //number of rows set in the dataArray intializer
+  //number of rows set in the dataArray intializer
   for (int y = 0; y < rows; y++) { //row incrementor
     digitalWrite(latchPin, LOW);
     for (int x = 0; x < registers; x++) { //shift register incrementor
@@ -88,7 +86,7 @@ void loop() {
           Serial.println("");
         }
         j++;//increment next byte of data to send to shift registers
-        if (j > 1) {
+        if (j > registers - 1) {
           i++; //increment to next row of data
           j = 0;
         }
@@ -113,9 +111,10 @@ void loop() {
       readString += c; //makes the string readString
     }
   }
-  if (i == 16) { //call the renderRow function if outputs when the array is filled,
+  if (i == rows) { //call the renderRow function if outputs when the array is filled,
     renderRow();
     rendered = true;
+    Serial.flush();
   }
   if ((looping) && (rendered)) renderRow(); //looping is enabled only the rows have all been rendered once
 }
