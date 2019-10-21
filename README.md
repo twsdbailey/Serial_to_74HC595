@@ -10,6 +10,8 @@ When a character bytes are sent to the arduino from a computer,  it gets parsed 
 
 **Note: The Information below is specific to the included example code.**
 
+The shift registors are connected only using 3-wires (clock, data, latch).  The master-reset line (pin 10 on the 74HC595) is connected to Vcc) Resetting of the registers is done via code.
+
 Data sent to the arduino needs to be sent as ASCII characters.  Sending the number characters 255 will turn-on all eight outputs on the first shift register.  Sending a second set of 255 number characters will turn-on all eight outputs on the second shift register.  Conversely, sending a 0 number character will turn-off all eight outputs on the first shift registers.  Sending a second 0 number character will turn-off all eight outputs on the second shift register.
 
 When sending each two byte set, both number characters need to be followed by a comma  x,x,  No spaces.
