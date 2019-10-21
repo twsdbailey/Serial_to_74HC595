@@ -4,7 +4,7 @@ Send bytes of data to a 74HC595 shift register from a computer via an Arduino to
 
 This example code demonstrates how to send bytes of data to 74HC595 shift registers serially via an Arduino controller.   Each shift register represents one byte (or 8 bits) of data, and therefore provides eight controlled outputs. The 74HC595 shift registers can be daisy chained together to add additional outputs in groups of eight.  The maximum number of daisy-chained shift registers will depend on the application.
 
-When a byte of character data is sent to the arduino from a computer,  it gets parsed and stored into a two-dimensional array representing rows and columns.  The number of columns is determined by the number of shift registers used (8 columns per).  The number of rows to render can be set to any number, depending on the amount of RAM available on the controller.  The example code as written uses two shift registers to create 16 columns, and renders 16 rows of patterned outputs.  The amount of RAM needed to make an array of this size (16 X 16) is 256 bytes.  Arduino UNOs have 1KB of RAM.  If you need more RAM, consider using an Arduino Mega (8KB of RAM), or something similar.
+When a character bytes are sent to the arduino from a computer,  it gets parsed and stored into a two-dimensional array representing rows and columns.  The number of columns is determined by the number of shift registers used (8 columns per).  The number of rows to render should match the number of columns.  The example code as written uses two shift registers to create 16 columns, and renders 16 rows of patterned outputs.  The amount of RAM needed to make an array of this size (16 X 16) is 256 bytes.  Arduino UNOs have 1KB of RAM.  If you need more RAM, consider using an Arduino Mega (8KB of RAM), or something similar.
 
 
 
@@ -13,6 +13,8 @@ When a byte of character data is sent to the arduino from a computer,  it gets p
 Data sent to the arduino needs to be sent as ASCII characters.  Sending the number characters 255 will turn-on all eight outputs on the first shift register.  Sending a second set of 255 number characters will turn-on all eight outputs on the second shift register.  Conversely, sending a 0 number character will turn-off all eight outputs on the first shift registers.  Sending a second 0 number character will turn-off all eight outputs on the second shift register.
 
 When sending each two byte set, both number characters need to be followed by a comma  x,x,  No spaces.
+
+Note: Data can also be sent as binary or hex (i.e. b11111111, or 0xFF to turn-on all outputs of a shift register)
 
 **Example:**
 
