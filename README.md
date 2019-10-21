@@ -37,7 +37,7 @@ If an “n” character (do not include the quotes) followed be a carriage retur
 
 **Designing patterns**
 
-When creating a pattern, it might be helpful to divide each row into byte columns, each byte representing one shift register. The first shift registor in the chain is the lowest byte.   Use 1s and 0s to represent the output states for the given rows. Use an online converter to convert to desired data-types.
+When creating a pattern, it might be helpful to divide each row into byte columns, each byte representing one shift register. The first shift registor in the chain is the lowest byte.   Use 1s and 0s to represent the output states for the given rows. Use an online converter to convert binary to other desired data-types.
 
 https://www.rapidtables.com
 
