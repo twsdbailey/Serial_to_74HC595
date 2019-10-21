@@ -40,10 +40,11 @@ https://www.rapidtables.com/convert/number/binary-to-decimal.html
 **Example:  X pattern LED flasher**
 
 ```
-Rows	     Line index    Columns index (2 byte elements)      Decimal equivalent	
-                                   (1)            (0)
+Rows	     Line index    Columns index (2 byte elements)      Decimal equivalent
+                                  (1)             (0)                            
+                          MSB                             LSB         
                            |   upper byte  |   lower byte  |                          
-                          MSB                             LSB
+
 Row one: 	(0)         1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1	 =     128,1,
 Row two         (1)         0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0	=       64,2,
 Row three       (2)         0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0	=  	32,4,
