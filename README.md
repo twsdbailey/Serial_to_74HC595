@@ -40,25 +40,24 @@ https://www.rapidtables.com/convert/number/binary-to-decimal.html
 **Example:  X pattern LED flasher**
 
 ```
-Rows	     Line index    Columns index (2 byte elements)      Decimal equivalent
+	                       Columns index (2 byte elements)   
                                   (1)             (0)                            
                           MSB                             LSB         
-                           |   upper byte  |   lower byte  |                          
-
-Row one: 	(0)         1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1	 =     128,1,
-Row two         (1)         0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0	=       64,2,
-Row three       (2)         0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0	=  	32,4,
-Row four	(3)         0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0	=       16,8,
-Row five        (4)         0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0	=	8,16,
-Row six		(5)         0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0	=	4,32,
-Row seven       (6)         0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0	=	2,64,
-Row eight	(7)         0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0     =      1,128,
-Row nine	(8)         0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0	=      1,128,
-Row ten		(9)         0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0	=	2,64,
-Row eleven      (10)        0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0	=       4,32,
-Row twelve      (11)        0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0	=	8,16,
-Row thirteen    (12)        0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0	=       16,8,
-Row fourteen    (13)        0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0	=  	32,4,
-Row fifteen	(14)        0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0     =  	64,2,
-Row sixteen     (15)        1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1     =      128,1,
+  Rows      Line index     |   upper byte  |   lower byte  |      Decimal equivalent    Binary equivalent           Hex equivalent          
+Row one: 	(0)         1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1	=      128,1,          b10000000,b00000001,            0x80,0x01,
+Row two         (1)         0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0	=       64,2,          b01000000,b00000010,            0x40,0x02,
+Row three       (2)         0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0	=  	32,4,          b00100000,b00000100,            0x20,0x04,
+Row four	(3)         0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0	=       16,8,          b00010000,b00001000,            0x10,0x08,
+Row five        (4)         0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0	=	8,16,          b00001000,b00010000,            0x08,0x10,
+Row six		(5)         0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0	=	4,32,          b00000100,b00100000,            0x04,0x20,
+Row seven       (6)         0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0	=	2,64,          b00000010,b01000000,            0x02,0x40,
+Row eight	(7)         0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0     =      1,128,          b00000001,b10000000,            0x01,0x80,
+Row nine	(8)         0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0	=      1,128,          b00000001,b10000000,            0x01,0x80,
+Row ten		(9)         0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0	=	2,64,          b00000010,b01000000,            0x02,0x40,
+Row eleven      (10)        0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0	=       4,32,          b00000100,b00100000,            0x04,0x20,
+Row twelve      (11)        0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0	=	8,16,          b00001000,b00010000,            0x08,0x10,
+Row thirteen    (12)        0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0	=       16,8,          b00010000,b00001000,            0x10,0x08,
+Row fourteen    (13)        0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0	=  	32,4,          b00100000,b00000100,            0x20,0x04,
+Row fifteen	(14)        0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0     =  	64,2,          b01000000,b00000010,            0x40,0x02,
+Row sixteen     (15)        1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1     =      128,1,          b10000000,b00000001,            0x80,0x01,
 ```
