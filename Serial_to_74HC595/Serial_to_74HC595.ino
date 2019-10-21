@@ -6,7 +6,7 @@
 
 //*********configuration*******************
 int dataArray[16][2]; //first initializer = total rows to render (multiply the number of shift registers being used x 8),
-//second initializer = total number of shift registers
+                      //second initializer = total number of shift registers
 int rows = 16; //should match first intitalizer in dataArray
 int registers = 2; //should match 2nd intitializer in dataArray, each register has 8 outputs
 
